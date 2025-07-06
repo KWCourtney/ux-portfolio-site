@@ -1,0 +1,38 @@
+{# eleventy-sample/_includes/layouts/case-study.njk #}
+{% extends "layouts/base.njk" %}
+
+{% block page_content %}
+  <section class="case-study-page-content">
+
+    {# Case Study Hero Section - for the title, summary from front matter #}
+    <section class="page-hero content-section">
+        <div class="page-hero-content">
+          <h1 class="page-title">{{ title }}</h1>
+          {% if summary %}
+            <p class="page-intro case-study-summary-text">{{ summary }}</p>
+          {% endif %}
+        </div>
+    </section>
+
+    {# Render the Card Hero Section from Markdown frontmatter variable #}
+    {% if heroCardsHTML %}
+      {{ heroCardsHTML | safe }} {# Use | safe because the frontmatter variable contains HTML #}
+    {% endif %}
+
+    {# Sticky Tab Navigation - Positioned AFTER the cards, BEFORE the main tabbed sections #}
+    <nav class="case-study-tabs-nav" id="case-study-tabs-nav">
+        <div class="case-study-tabs-container content-section">
+            <ul class="case-study-tabs-list">
+                {# JavaScript will dynamically populate these tab links #}
+            </ul>
+        </div>
+    </nav>
+
+    {# This section will contain the main scrollable tabbed content blocks from your Markdown file #}
+    {# 'content' variable now contains everything in MD body AFTER the frontmatter #}
+    <section class="case-study-body-content content-section">
+        {{ content | safe }}
+    </section>
+
+  </section> {# End of .case-study-page-content #}
+{% endblock %}
