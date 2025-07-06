@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Global Resize Listener for Nav State Management ---
+    // --- Global fResize Listener for Nav State Management ---
     let isDesktopView = window.innerWidth >= 768;
     window.addEventListener('resize', function() {
         const newIsDesktopView = window.innerWidth >= 768;
@@ -214,8 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (window.scrollY >= scrollThreshold) {
                 if (!caseStudyTabsNav.classList.contains('sticky')) {
                     caseStudyTabsNav.classList.add('sticky');
-                    // MODIFICATION #2: Changed from `${headerOffset}px`
-                    caseStudyTabsNav.style.top = '0px';
+                    caseStudyTabsNav.style.top = `${headerOffset}px`;
                     document.body.classList.add('body-sticky-nav-padding');
                     document.body.style.setProperty('--sticky-nav-height', `${currentTabsNavHeight}px`);
                 }

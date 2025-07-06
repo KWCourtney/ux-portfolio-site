@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Global Resize Listener for Nav State Management ---
+    // --- Global fResize Listener for Nav State Management ---
     let isDesktopView = window.innerWidth >= 768;
     window.addEventListener('resize', function() {
         const newIsDesktopView = window.innerWidth >= 768;

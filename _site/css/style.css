@@ -1706,8 +1706,7 @@ body.page-case-study .hero-section .case-study-hero-cards-grid {
     transform: translateX(2px);
 }
 .cs-carousel__button--left .material-symbols-outlined {
-    /* transform: translateX(-2px); */
-        transform: translateX(4px);
+  transform: translateX(4px);
 }
 
 .cs-carousel__button--left {
@@ -1769,7 +1768,6 @@ body.page-case-study .hero-section .case-study-hero-cards-grid {
 
 /* Custom focus ring for accessibility */
 .cs-carousel__dot:focus {
-  outline: 2px solid var(--color-accent-blue);
   outline: 2px solid #9aa0a6;
   outline-offset: 2px;
 }
