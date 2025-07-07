@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const tabsNavHeight = caseStudyTabsNav.offsetHeight;
                     const targetElementRect = targetElement.getBoundingClientRect();
                     const targetElementOffsetTop = targetElementRect.top + window.scrollY;
-                    let scrollToPosition = targetElementOffsetTop - 0 - tabsNavHeight - 5;
+                   let scrollToPosition = targetElementOffsetTop - headerOffset - tabsNavHeight - 5;
                     window.scrollTo({ top: scrollToPosition, behavior: 'smooth' });
                 }
             }

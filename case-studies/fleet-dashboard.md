@@ -55,6 +55,8 @@ heroCardsHTML: |
 
 {# The body of the Markdown now starts directly with your first tabbed section. #}
 {# The hero cards section (HTML) has been moved to the 'heroCardsHTML' frontmatter variable above. #}
+
+<!-- Overview -->
 <div id="overview" class="text-content-block" data-tab-label="Overview">
     <h2>Project Overview</h2>
     <p>Fleet operations teams relied on multiple reports to track alarms -- cargo, dwell, and movement -- requiring filters, cross-checks, and manual searches. This UX-led project created the platform's first Fleet Dashboard, replacing that with a real-time operational view. I led research, wireframes, and design in collaboration with Product, Engineering, and SMEs. Based on user interviews and competitive analysis, the dashboard delivered major efficiency gains and became the most-used page within a month.</p>
@@ -88,37 +90,35 @@ heroCardsHTML: |
     </div>
     </div>
 
+<!-- Challenge -->
 <div id="the-challenge" class="text-content-block" data-tab-label="Challenge">
-  <h2>The Challenge: From Manual Reports to Real-Time Visibility</h2>
-  
-  <p>Before the dashboard, fleet teams had no operational overview. Monitoring alarms, cargo, dwell, or movement meant opening multiple reports, like Reefer Status or Location Tracking, applying filters, and scanning through raw data. This was slow, error-prone, and a constant source of frustration.</p>
-  
-  <p>Different users needed entirely different views. A reefer-only operator, a dry fleet dispatcher, and a mixed-fleet customer support rep all had distinct priorities. No single default dashboard would work for everyone, which made customization a critical design requirement. Version 1 allowed users to show or hide cards; Version 2 on the roadmap would support rearranging them, which introduced technical complexity with layout rules, grid behavior, and scaling constraints.</p>
-  <ul>
-    <li>
-    <h4>Operational Blind Spots</h4>
-    <div class="content">
-        Relying on static reports meant users had no real-time view of fleet status. Since the data was constantly updating from IoT tracking devices, users had to keep checking the Reefer Status Report for the latest alarms, motion status, or disconnects, which added friction and delayed response time.
-    </div>
-    </li>
-    <li>
-      <h4>Workflow Inefficiency</h4>
-      <div class="content">Routine tasks were tedious. Something as simple as checking for shutdown alarms meant logging into the Reefer Status Report, applying filters, and scanning rows of data manually, which wasted minutes every time the user had to check.</div>
-    </li>
-</ul>
+    <h2>The Challenge: From Manual Reports to Real-Time Visibility</h2>
+    <p>Before the dashboard, fleet teams had no operational overview. Monitoring alarms, cargo, dwell, or movement meant opening multiple reports, like Reefer Status or Location Tracking, applying filters, and scanning through raw data. This was slow, error-prone, and a constant source of frustration.</p>
+    <p>Different users needed entirely different views. A reefer-only operator, a dry fleet dispatcher, and a mixed-fleet customer support rep all had distinct priorities. No single default dashboard would work for everyone, which made customization a critical design requirement. Version 1 allowed users to show or hide cards; Version 2 on the roadmap would support rearranging them, which introduced technical complexity with layout rules, grid behavior, and scaling constraints.</p>
+    <ul>
+      <li>
+      <h4>Operational Blind Spots</h4>
+      <div class="content">
+          Relying on static reports meant users had no real-time view of fleet status. Since the data was constantly updating from IoT tracking devices, users had to keep checking the Reefer Status Report for the latest alarms, motion status, or disconnects, which added friction and delayed response time.
+      </div>
+      </li>
+      <li>
+        <h4>Workflow Inefficiency</h4>
+        <div class="content">Routine tasks were tedious. Something as simple as checking for shutdown alarms meant logging into the Reefer Status Report, applying filters, and scanning rows of data manually, which wasted minutes every time the user had to check.</div>
+      </li>
+  </ul>
 </div>
 
 <!-- Image / Legacy Reefer Status Report -->
 {% fullWidthImage "/images/case-studies/RSReport.png", "The legacy Reefer Status Report required users to apply filters manually and scan rows of data to spot issues.", "Fig 1: The legacy Reefer Status Report required users to apply filters manually and scan rows of data to spot issues." %}
 
-
-
+<!-- Challenge continued -->
 <div class="text-content-block after-image">  
     <ul>
     <li>
         <h4>One-Size-Fits-None Was a Real Problem</h4>
         <div class="content">
-        Mixed fleet managers, reefer-only operators, and dry fleet dispatchers had radically different priorities. This wasn't anecdotal. It was validated through both interviews and behavior tracking. Some users focused entirely on reefer alarms. Others prioritized dwell time or cargo status. This directly validated the need for a modular, customizable dashboard, as well as the role-based default views we shipped for <strong>Fleet Managers</strong>, <strong>Customer Support / Operations / Dispatch</strong>, and a general fallback group.
+        Mixed fleet managers, reefer-only operators, and dry fleet dispatchers had radically different priorities. This wasn't anecdotal. It was validated through both interviews and behavior tracking. Some users focused entirely on reefer alarms. Others prioritized dwell time or cargo status. This directly validated the need for a modular, customizable dashboard, as well as the role-based default views we shipped for Fleet Managers, Customer Support / Operations / Dispatch, and a general fallback group.
         </div>
     </li>
     <li>
@@ -144,6 +144,7 @@ heroCardsHTML: |
   </p>
 </div>
 
+<!-- Approach -->
 <div id="my-role" class="text-content-block" data-tab-label="Approach">
     <h2>My Role and Strategic Approach</h2>
     <p>I led the UX strategy from problem framing through research, design, and validation. My approach combined qualitative interviews, SaaS product analytics, and usability testing to align user needs with business goals.</p>
@@ -153,14 +154,15 @@ heroCardsHTML: |
     <p>We also created actionable personas, including <strong class="metric-highlight">Marcus Lee, an Operations Manager</strong>, whose need to prioritize alarms and fleet status directly shaped dashboard customization.</p>
 </div>
 
+<!-- Image / Terminal Manager Persona -->
 {% fullWidthImage "/images/case-studies/OMP Mobile App In Terminal Manager Persona v2.png", "Persona artifact for Marcus Lee, an Operations Manager overseeing mixed reefer and dry fleets. His goals and frustrations directly informed dashboard card prioritization and customization features.", "Fig 2: Marcus Lee represented one of the primary user types. His need to quickly surface critical alarms without unnecessary noise reinforced the requirement for a modular dashboard." %}
 
+<!-- Approach continued -->
 <div class="text-content-block after-image">  
     <h3>Mapping Workflow Friction</h3>
     <p>We mapped the legacy workflow: log in, navigate to the Reefer Status Report, apply filters (e.g., Shutdown alarms), wait for results, and repeat -- averaging 4 steps per task. The dashboard reduced this to 2 steps: log in and click an alarm card. Time-on-task analysis using Pendo sessions confirmed a <strong class="metric-highlight">50% reduction in steps</strong> and <strong class="metric-highlight">30% faster issue identification</strong>.</p>
     <h3>Test-Driven, Collaborative Design</h3>
     <p>Wireframes in Balsamiq evolved into high-fidelity prototypes in Figma. We collaborated closely with Product, Engineering, and SMEs to ensure the design supported different fleet types -- reefer-only, dry-only, and mixed -- with flexible defaults and alarm configurations. We also reviewed competitive SaaS dashboards to validate common design patterns like modular cards, role-based defaults, and clickable alarm summaries, which ensured the design met user expectations and SaaS UX standards.   The launch also included a redesign of the platform's global navigation, replacing top-heavy links with a left-aligned nav more consistent with modern SaaS layouts.</p>
-
 </div>
 
 <!-- Images / Carousel / Wireframes -->
@@ -168,24 +170,16 @@ heroCardsHTML: |
     <div class="cs-carousel__track-container">
         <ul class="cs-carousel__track">
             <li class="cs-carousel__slide current-slide">
-                <img src="/images/case-studies/B2B-SaaS-Fleet-Dashboard-Early-Wireframe-01.png" alt="xxx">
-                <figcaption>xxx</figcaption>
+                <img src="/images/case-studies/B2B-SaaS-Fleet-Dashboard-Early-Wireframe-01.png" alt="Wireframe of the Fleet Dashboard (All Assets view) showing active alarms, cargo status, fuel levels, and asset movement. Donut chart shows 100 total assets with 60 moving and 40 dwelling.">
+                <figcaption>Fig 3: Early wireframe for the general Fleet Dashboard view. This concept emphasized a role-neutral layout showing alarms, movement, and fuel data across the full fleet. Card-based modules replaced manual filtering across multiple reports.</figcaption>
             </li>
-            <li class="cs-carousel__slide current-slide">
-                <img src="/images/case-studies/B2B-SaaS-Fleet-Dashboard-Early-Wireframe-02.png" alt="sss">
-                <figcaption>sss</figcaption>
+            <li class="cs-carousel__slide">
+                <img src="/images/case-studies/B2B-SaaS-Fleet-Dashboard-Early-Wireframe-04.png" alt="Wireframe of the Fleet Dashboard (Reefer view) showing alarms, reefer micro disconnects, and temperature range data. View is tailored to refrigerated fleet monitoring needs.">
+                <figcaption>Fig 4: The reefer-specific dashboard prototype introduced role-based filtering and reefer-only data. The design included set point temperatures, reefer micro disconnects, and other data not relevant to dry fleets.</figcaption>
             </li>
-            <li class="cs-carousel__slide current-slide">
-                <img src="/images/case-studies/B2B-SaaS-Fleet-Dashboard-Early-Wireframe-03.png" alt="xxx">
-                <figcaption>xxx</figcaption>
-            </li>
-            <li class="cs-carousel__slide current-slide">
-                <img src="/images/case-studies/B2B-SaaS-Fleet-Dashboard-Early-Wireframe-04.png" alt="xxx">
-                <figcaption>xxx</figcaption>
-            </li>
-            <li class="cs-carousel__slide current-slide">
-                <img src="/images/case-studies/B2B-SaaS-Fleet-Dashboard-Early-Wireframe-05.png" alt="xxx">
-                <figcaption>xxx</figcaption>
+            <li class="cs-carousel__slide">
+                <img src="/images/case-studies/B2B-SaaS-Fleet-Dashboard-Early-Wireframe-05.png" alt="Wireframe of the Fleet Dashboard (Dry view) showing cargo status, fuel levels, and dry fleet-specific alarms. Reefer-specific metrics are omitted.">
+                <figcaption>Fig 5: The dry fleet dashboard removed refrigerated-specific data to reduce noise and improve clarity. Users saw only relevant metrics like fuel sensors and cargo camera status, aligned to dry fleet operations.</figcaption>
             </li>
         </ul>
         <button class="cs-carousel__button cs-carousel__button--left is-hidden">
@@ -199,45 +193,22 @@ heroCardsHTML: |
         <button class="cs-carousel__dot current-dot"></button>
         <button class="cs-carousel__dot"></button>
         <button class="cs-carousel__dot"></button>
-        <button class="cs-carousel__dot"></button>
-        <button class="cs-carousel__dot"></button>
     </div>
 </div>
 
+<!-- Approach continued -->
 <div class="text-content-block after-image">
     <h3>Role-Based Defaults and Scalable Design</h3>
-    <p>Alongside user-driven customization, we designed role-based default dashboards for Fleet Managers, Customer Support/Operations, and a general fallback view—based on interviews, SME input, and Pendo usage data. Each role saw a tailored view aligned to their tasks: dispatchers prioritized micro disconnects, while fleet managers focused on alarms and movement.</p>
+    <p>Alongside user-driven customization, we designed role-based default dashboards for Fleet Managers, Customer Support/Operations, and a general fallback view, based on interviews, SME input, and Pendo usage data. Each role saw a tailored view aligned to their tasks: dispatchers prioritized micro disconnects, while fleet managers focused on alarms and movement.  Early wireframes explored general, reefer-specific, and dry fleet-specific layouts to validate role-based content needs. This helped define which cards should appear by default for each fleet type.</p>
     <p>Filters and chips were dynamic based on fleet type (e.g. reefer-only accounts only saw reefer options), reducing noise and confusion. Users could also save a filter set as their default view to streamline daily use.</p>
     <p>Version 1 supported show/hide card customization. Version 2, on the roadmap, would introduce drag-and-drop card reordering -- a SaaS-standard pattern for scalable dashboards. Designing for dynamic layouts while keeping the UI scannable was a key constraint throughout.</p>
     <p>Every decision tied back to the same goal: eliminate report-hunting, improve visibility, and speed up decision-making for end users.</p>
 </div>
 
-{% fullWidthImage "/images/case-studies/FleetDashboardMockup.png", "High-fidelity mockup of the Fleet Dashboard. Cards display real-time data on alarms, fleet status, dwell time, and cargo movement, providing a consolidated operational view for users managing reefer and dry fleets.", "Fig 3: The Fleet Dashboard mockup highlights how users can access key operational data without navigating multiple reports. Card-level interactions replaced report filtering and search tasks, and the updated global navigation improved access to high-priority fleet tools." %}
+<!-- Image / Fleet Dashboard / Mockup -->
+{% fullWidthImage "/images/case-studies/FleetDashboardAllClearState.png", "High-fidelity mockup of the Fleet Dashboard. Cards display real-time data on alarms, fleet status, dwell time, and cargo movement, providing a consolidated operational view for users managing reefer and dry fleets.", "Fig 6: The dashboard in its all clear state shows that even when there are no alarms, users can still monitor real-time asset motion, fuel status, and geofence data reducing the need for report-based spot checks." %}
 
-
-<h3 class="pain-points-section-title">Key Pain Points</h3>
-    <div class="pain-point-cards-grid">
-        <div class="pain-point-card">
-            <h4 class="pain-point-card-number">Pain Point</h4>
-            <h5 class="pain-point-card-name">No Real-Time Visibility</h5>
-            <p class="pain-point-card-description">
-                Users had to rely on multiple static reports with manual filtering to check alarms, fleet movement, and dwell time, slowing response time and increasing the risk of missed issues.
-            </p>
-        </div>
-        <div class="pain-point-card">
-            <h4 class="pain-point-card-number">Pain Point</h4>
-            <h5 class="pain-point-card-name">Inefficient, Multi-Step Workflows</h5>
-            <p class="pain-point-card-description">Checking for shutdown alarms required 4-5 clicks and filters across separate reports. This repetitive process made critical monitoring harder than it should be.</p>
-        </div>
-        <div class="pain-point-card">
-            <h4 class="pain-point-card-number">Pain Point</h4>
-            <h5 class="pain-point-card-name">One-Size-Fits-None Dashboard</h5>
-            <p class="pain-point-card-description">
-            Mixed-fleet users, reefer, only operators, and dry fleet dispatchers all needed different views, but the platform had no way to surface personalized, role-specific data in one place.
-            </p>
-        </div>
-</div>
-
+<!-- Findings -->
 <div id="findings" class="text-content-block" data-tab-label="Findings">
   <h2>Key Findings and Insights</h2>
   <p>Research confirmed what users had expressed in interviews and what behavioral data from Pendo revealed: the report-based monitoring workflow was too slow, too fragmented, and not scalable for daily fleet operations inside the SaaS platform. These insights directly shaped the dashboard's structure, the decision to use modular cards, and the prioritization of alarm-driven workflows.</p>
@@ -257,7 +228,7 @@ heroCardsHTML: |
     <li>
       <h4>Alarm and Triage Workflows Were Broken</h4>
       <div class="content">
-        Pendo event tracking and user interviews confirmed that users expected alarm counts, like '16 Shutdown Alarms', to be interactive. The fact that these were only accessible through filtered reports, rather than clickable summaries in the web app, created unnecessary friction for fast triage. This directly informed the decision to make the alarm cards interactive, supporting faster task completion and smoother workflows in the SaaS platform.
+        Because no alarm summaries existed, users had to rely on filtered reports to investigate issues, which slowed triage and increased friction. This gap directly informed the decision to surface interactive alarm counts in the dashboard. Making the alarm cards clickable enabled faster task completion and aligned with SaaS UX standards for efficient workflows.
       </div>
     </li>
     <li>
@@ -269,11 +240,34 @@ heroCardsHTML: |
   </ul>
 </div>
 
-<div id="strategic-solutions" class="text-content-block" data-tab-label="Solutions">
-  <h2>Solutions and Recommendations</h2>
-  <p>Guided by user research, product analytics, and usability testing, the solution focused on 3 key areas: <strong class='metric-highlight'>streamlining workflows, improving operational visibility</strong>, and <strong class='metric-highlight'>designing for scalability within a SaaS enterprise product</strong>. Each design decision was directly tied to measurable impact, including the <strong class='metric-highlight'>50% reduction in workflow steps</strong> and <strong class='metric-highlight'>30% faster issue identification</strong>.</p>
+<!-- Key Pain Points -->
+<h3 class="pain-points-section-title">Key Pain Points</h3>
+<div class="pain-point-cards-grid">
+    <div class="pain-point-card">
+        <h4 class="pain-point-card-number">Pain Point</h4>
+        <h5 class="pain-point-card-name">No Real-Time Visibility</h5>
+        <p class="pain-point-card-description">
+            Users had to rely on multiple static reports with manual filtering to check alarms, movement, and dwell time, slowing response time and increasing missed issues.
+        </p>
+    </div>
+    <div class="pain-point-card">
+        <h4 class="pain-point-card-number">Pain Point</h4>
+        <h5 class="pain-point-card-name">Inefficient, Multi-Step Workflows</h5>
+        <p class="pain-point-card-description">Checking for shutdown alarms required 4-5 clicks across separate reports. This repetitive process made critical monitoring harder than it should be.</p>
+    </div>
+    <div class="pain-point-card">
+        <h4 class="pain-point-card-number">Pain Point</h4>
+        <h5 class="pain-point-card-name">One-Size-Fits-None Dashboard</h5>
+        <p class="pain-point-card-description">Mixed-fleet, reefer-only, and dry fleet users needed different views, but the platform had no way to surface personalized, role-specific data in one place.
+        </p>
+    </div>
+</div>
 
-  <h3>Streamlining Operational Workflows</h3>
+<!-- Solution -->
+<div id="strategic-solutions" class="text-content-block" data-tab-label="Solutions">
+    <h2>Solutions and Recommendations</h2>
+    <p>Guided by user research, product analytics, and usability testing, the solution focused on 3 key areas: <strong class='metric-highlight'>streamlining workflows, improving operational visibility</strong>, and <strong class='metric-highlight'>designing for scalability within a SaaS enterprise product</strong>. Each design decision was directly tied to measurable impact, including the <strong class='metric-highlight'>50% reduction in workflow steps</strong> and <strong class='metric-highlight'>30% faster issue identification</strong>.</p>
+    <h3>Streamlining Operational Workflows</h3>
     <ul>
         <li>
         <h4>Surfacing Key Data in One Place</h4>
@@ -288,8 +282,7 @@ heroCardsHTML: |
         <div class="content">Instead of manually filtering and cross-checking reports, users could now scan their fleet's real-time status at a glance. This directly contributed to the <strong class="metric-highlight">30% faster issue identification</strong> metric.</div>
         </li>
     </ul>
-
-  <h3>Improving Operational Visibility</h3>
+    <h3>Improving Operational Visibility</h3>
     <ul>
         <li>
         <h4>Modular, Role-Relevant Alarm Cards</h4>
@@ -305,30 +298,34 @@ heroCardsHTML: |
         <div class="content">Pendo usage data revealed which alarms and metrics were accessed most frequently. This informed which cards were prioritized higher in the layout -- surfacing the most operationally critical data first.</div>
         </li>
     </ul>
-
-  <h3>Design for Flexibility and Scalability</h3>
+    <h3>Design for Flexibility and Scalability</h3>
     <ul>
         <li>
-        <h4>Role-Based Default Dashboards</h4>
-        <div class="content">
-            Defaults were created for <strong class="metric-highlight">Fleet Managers</strong> (Alarms, Movement, Dwell), <strong class="metric-highlight">Customer Support / Dispatch</strong> (Alarms, Reefer Status, Micro Disconnects), and a <strong class="metric-highlight">General</strong> fallback (Basic alarms and movement). This SaaS-native pattern supported faster onboarding and reduced setup friction.
-        </div>
+          <h4>Role-Based Default Dashboards</h4>
+          <div class="content">
+              Defaults were created for <strong class="metric-highlight">Fleet Managers</strong> (Alarms, Movement, Dwell), <strong class="metric-highlight">Customer Support / Dispatch</strong> (Alarms, Reefer Status, Micro Disconnects), and a <strong class="metric-highlight">General</strong> fallback (Basic alarms and movement). This SaaS-native pattern supported faster onboarding and reduced setup friction.
+          </div>
         </li>
         <li>
-        <h4>Customizable Card Visibility</h4>
-        <div class="content">
-            Users could show or hide dashboard cards based on role, fleet type, or personal preference supporting operational flexibility without overwhelming the UI.
-        </div>
+          <h4>Role-Aligned Default Content</h4>
+          <div class="content">
+            Default dashboards were tailored by user role (Fleet Manager, Dispatch, Operations). Each included the top alarm and status cards most relevant to that role, minimizing noise and setup time.
+          </div>
         </li>
         <li>
-        <h4>Roadmap: Drag-and-Drop Card Ordering (Version 2)</h4>
-        <div class="content">
-            While Version 1 focused on card visibility, user feedback and engineering collaboration shaped a roadmap for drag-and-drop card positioning in Version 2. This required thoughtful grid behavior rules to maintain clean, responsive layouts with variable card sizes.
-        </div>
+          <h4>Customizable Card Visibility</h4>
+          <div class="content">
+              Users could show or hide dashboard cards based on role, fleet type, or personal preference supporting operational flexibility without overwhelming the UI.
+          </div>
+        </li>
+        <li>
+          <h4>Roadmap: Drag-and-Drop Card Ordering (Version 2)</h4>
+          <div class="content">
+              While Version 1 focused on card visibility, user feedback and engineering collaboration shaped a roadmap for drag-and-drop card positioning in Version 2. This required thoughtful grid behavior rules to maintain clean, responsive layouts with variable card sizes.
+          </div>
         </li>
     </ul>
-
-  <h3>Interaction Design Enhancements</h3>
+    <h3>Interaction Design Enhancements</h3>
     <ul>
         <li>
         <h4>Clickable Data Patterns</h4>
@@ -345,12 +342,11 @@ heroCardsHTML: |
         <li>
         <h4>Responsive Layout Considerations</h4>
         <div class="content">
-            The dashboard was built with flexible grid rules that scaled for different screen sizes and accommodated varying numbers of visible cards without compromising clarity.
+          The dashboard used flexible grid rules that scaled for different screen sizes and asset counts. While not mobile-first, the design accounted for accessibility contrast standards and ensured key workflows remained usable on smaller screens.
         </div>
         </li>
     </ul>
-
-  <h3>Future Vision: Smarter Operations</h3>
+    <h3>Future Vision: Smarter Operations</h3>
     <p>Long-term, the design foundation enables AI-driven insights like predictive fleet health, proactive alerting (e.g. 'high dwell risk'), and smart recommendations based on usage patterns. This direction aligns with enterprise SaaS trends focused on decision intelligence and proactive operations management.</p>
 </div>
 
@@ -359,20 +355,20 @@ heroCardsHTML: |
     <div class="cs-carousel__track-container">
         <ul class="cs-carousel__track">
             <li class="cs-carousel__slide current-slide">
-                <img src="/images/case-studies/FleetDashboardAllClearState.png" alt="xxx">
-                <figcaption>xxx</figcaption>
+                <img src="/images/case-studies/FleetDashboardAllClearState.png" alt="Fleet dashboard showing active alarms, low fuel/battery, cargo status, and dwell counts. Asset type breakdown and motion status displayed with 2,386 assets total.">
+                <figcaption>Fig 7: The Fleet Dashboard mockup highlights how users can access key operational data without navigating multiple reports. Card-level interactions replaced report filtering and search tasks, and the updated global navigation improved access to high-priority fleet tools.</figcaption>
             </li>
-            <li class="cs-carousel__slide current-slide">
-                <img src="/images/case-studies/FleetDashboardFilterPanelOpen.png" alt="xxx">
-                <figcaption>xxx</figcaption>
+            <li class="cs-carousel__slide">
+                <img src="/images/case-studies/FleetDashboardFilterPanelOpen.png" alt="Fleet dashboard with no active alarms and the filter panel open, showing options to refine results by motion, geofence, alarm type, and other parameters.">
+                <figcaption>Fig 8: The filter panel lets users refine results by alarm type, motion status, asset group, or custom parameters. This view shows the dashboard in an all-clear state with filters visible supporting both passive monitoring and targeted triage within the same workflow.</figcaption>
             </li>
-            <li class="cs-carousel__slide current-slide">
-                <img src="/images/case-studies/FleetDashboardMockup.png" alt="xxx">
-                <figcaption>xxx</figcaption>
+            <li class="cs-carousel__slide">
+                <img src="/images/case-studies/FleetDashboardAlarms.png" alt="Dashboard view showing active alarms for Shutdown and Micro Disconnect alongside cargo empty and low fuel cards. Visual emphasis supports alarm triage.">
+                <figcaption>Fig 9: When alarms are present, the dashboard prioritizes them with high-contrast cards, enabling fast triage. Alarm types like Shutdown and Micro Disconnect are clearly separated and clickable, aligning with SaaS UX patterns for filtered drilldowns.</figcaption>
             </li>
-            <li class="cs-carousel__slide current-slide">
-                <img src="/images/case-studies/FleetDashboardFilteredMoving.png" alt="sss">
-                <figcaption>sss</figcaption>
+            <li class="cs-carousel__slide">
+                <img src="/images/case-studies/FleetDashboardFilteredMoving.png" alt="Dashboard filtered to show only moving assets. Stationary data is suppressed while alarm and dwell metrics update dynamically to reflect filtered fleet view.">
+                <figcaption>Fig 10: Filtering to "Moving" assets updates the dashboard to show only relevant metrics, hiding stationary-related cards. This role-driven filtering model supports use cases like dispatch or operations teams monitoring assets in transit.</figcaption>
             </li>
         </ul>
         <button class="cs-carousel__button cs-carousel__button--left is-hidden">
@@ -390,7 +386,7 @@ heroCardsHTML: |
     </div>
 </div>
 
-
+<!-- Impact and Results -->
 <div id="impact-results" class="text-content-block" data-tab-label="Impact">
   <h2>Impact and Results</h2>
   <p>The dashboard delivered measurable improvements to both operational efficiency and user experience. It replaced fragmented, report-driven workflows with a real-time operational view that became the most-used page in the SaaS platform within a month.</p>
@@ -423,6 +419,7 @@ heroCardsHTML: |
     <p>The combination of research-driven design, role-based defaults, and SaaS-native interaction patterns not only improved the day-to-day experience for fleet managers and customer support teams, but also set a foundation for scalable, data-driven operations across the platform.</p>
 </div>
 
+<!-- Quote / Post Launch -->
 <div class="styled-quote-container">
   <span class="styled-quote-decorative-marks">“</span>
   <p class="styled-quote-text">
@@ -433,7 +430,7 @@ heroCardsHTML: |
   </p>
 </div>
 
-
+<!-- Conclusion -->
 <div id="final-thoughts" class="text-content-block" data-tab-label="Conclusion">
   <h2>Conclusion and Lessons Learned</h2>
   <p>This project transformed a fragmented, report-driven workflow into a real-time operational dashboard improving visibility, reducing workflow friction, and delivering measurable gains in efficiency for fleet operations teams.</p>
