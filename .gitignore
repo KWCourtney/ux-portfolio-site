@@ -1,0 +1,8 @@
+# Dependency folder
+node_modules/
+
+# Eleventy build output folder
+_site/
+
+# Exclude all zip files
+*.zip
