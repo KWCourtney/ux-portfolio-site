@@ -272,20 +272,7 @@ div {
   display: flex;
   gap: 0.5rem;
 }
-/* Show dropdown panel on hover for desktop nav */
-/* @media (hover: hover) and (pointer: fine) {
-  .main-navigation .has-dropdown:hover > .dropdown-panel,
-  .main-navigation .has-dropdown:focus-within > .dropdown-panel {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-    transform: translateX(-50%) translateY(0);
-  }
-  .main-navigation .has-dropdown:hover > a .dropdown-arrow,
-  .main-navigation .has-dropdown:focus-within > a .dropdown-arrow {
-    transform: rotate(180deg);
-  }
-} */
+
 .main-navigation a {
   display: inline-block;
   padding: var(--top-nav-item-padding);
@@ -577,6 +564,12 @@ body.page-case-study .page-hero h1.page-title {
   margin-top: 1rem;
   margin-bottom: 3rem;
 }
+.work-grid-section h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-color-primary);
+  margin-bottom: 1.5rem;
+}
 .work-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -660,6 +653,9 @@ a:hover .work-item-title {
 a:hover .work-item-link {
   color: var( --color-white);
 }
+
+/* Add index page carousel here */
+
 
 /* ==========================================================================
    About and Contact Pages
@@ -902,6 +898,10 @@ body.page-case-study .hero-section .case-study-hero-cards-grid {
   list-style: none;
   padding-left: 0;
 }
+.text-content-block p {
+  color: var(--color-grey-text-light);
+  max-width: var(--max-width-inner-text-desktop);
+}
 .case-study-body-content .case-study-overview-list li {
   margin-bottom: 1.25rem;
   padding-left: 0;
@@ -1104,11 +1104,11 @@ body.page-case-study .hero-section .case-study-hero-cards-grid {
   max-height: 100vh;
   object-fit: contain;
   margin: 0 auto;
+  border-radius: 8px;
 }
 .full-width-image figcaption {
   text-align: center;
   font-size: .85em;
-  /* color: var(--color-grey-text-medium); */
   color: var(--color-grey-text-light);
   padding: 0.75rem 1rem;
   max-width: var(--max-width-inner-text-desktop);
@@ -1287,7 +1287,7 @@ body.page-case-study .hero-section .case-study-hero-cards-grid {
   box-shadow: none;
   background-color: var(--tab-pill-bg);     
   color: var(--tab-item-text-color);       
-  border: 2px solid transparent;           
+  border: 1px solid rgba(255, 255, 255, 0.5);         
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, background-color 0.15s ease-in-out, color 0.15s ease-in-out, border-color 0.15s ease-in-out, background 0.15s ease-in-out; 
 }
 
@@ -1319,6 +1319,161 @@ body.page-case-study .hero-section .case-study-hero-cards-grid {
   visibility: visible;
 }
 
+
+/* ==========================================================================
+   Case Study Image Carousel
+   ========================================================================== */
+
+.cs-carousel-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: var(--color-grey-dark-card);
+}
+
+.cs-carousel__track-container {
+  max-width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+}
+
+.cs-carousel__track {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  transition: transform 300ms ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.cs-carousel__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  position: relative;
+}
+
+.cs-carousel__slide img {
+  display: block;
+  width: 90%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cs-carousel__slide figcaption {
+  text-align: center;
+  font-size: .85em;
+  color: var(--color-grey-text-light);
+  padding: 0.75rem 1rem;
+  max-width: var(--max-width-inner-text-desktop);
+  margin: 0 auto;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+  height: 0;
+  overflow: hidden;
+}
+
+.cs-carousel__slide.current-slide figcaption {
+  opacity: 1;
+  height: auto;
+}
+.cs-carousel__button {
+  position: absolute;
+  background: var(--color-grey-dark-card);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, background-color 0.15s ease-in-out, color 0.15s ease-in-out, border-color 0.15s ease-in-out, background 0.15s ease-in-out; 
+  z-index: 2;
+}
+.cs-carousel__button:hover {
+  background: var(--color-grey-dark-card);
+  color: var(--tab-item-text-color);       
+  border: 2px solid #9aa0a6;    
+}
+.cs-carousel__button .material-symbols-outlined {
+  font-size: 24px;
+  transform: translateX(2px);
+}
+.cs-carousel__button--left .material-symbols-outlined {
+  transform: translateX(4px);
+}
+.cs-carousel__button--left {
+  left: 16px;
+}
+.cs-carousel__button--right {
+  right: 16px;
+}
+.cs-carousel__button--left {
+  left: calc(2.5% + 8px); 
+}
+.cs-carousel__button--right {
+  right: calc(2.5% + 8px);
+}
+.cs-carousel__button.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* === FINAL DOT NAVIGATION STYLES (WITH WIDTH TRANSITION) === */
+.cs-carousel__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding-top: 1.5rem;
+  --dot-base-width: 10px;
+  --dot-expanded-width: 50px; 
+}
+
+.cs-carousel__dot {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  height: var(--dot-base-width);
+  width: var(--dot-base-width);
+  background-color: var(--color-grey-dark-card);
+  border: 1px solid var(--color-white);
+  border-radius: 99px; 
+  transition: width 350ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms ease;
+}
+
+.cs-carousel__dot:hover {
+  background-color: var(--color-grey-text-light);
+  border-color: var(--color-grey-text-light);
+}
+
+.cs-carousel__dot.current-dot {
+  width: var(--dot-expanded-width);
+  background-color: var(--color-white);
+  border: none;
+  background: var(--tab-active-gradient);
+  background-clip: padding-box;
+}
+
+/* Custom focus ring for accessibility */
+.cs-carousel__dot:focus {
+  outline: 2px solid #9aa0a6;
+  outline-offset: 2px;
+}
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -1337,6 +1492,21 @@ body.page-case-study .hero-section .case-study-hero-cards-grid {
     display: inline-block;
     margin-top: 0.35em;
   }
+}
+@media (min-width: 375px) {
+   body.page-case-study .hero-section .case-study-hero-cards-grid {
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+   }
+  body.page-case-study .hero-section .case-study-hero-card {
+     padding: 3rem 2rem;
+  }
+}
+@media (min-width: 393px) {
+   body.page-case-study .hero-section .case-study-hero-cards-grid {
+    padding-left: 2.2rem;
+    padding-right: 2.2rem;
+   }
 }
 @media (min-width: 414px) {
   .work-item-title {
@@ -1609,168 +1779,4 @@ body.page-case-study .hero-section .case-study-hero-cards-grid {
     width: 90px;
     height: 90px;
   }
-}
-
-
-
-/* ==========================================================================
-   Case Study Image Carousel
-   ========================================================================== */
-
-.cs-carousel-container {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  background-color: var(--color-grey-dark-card);
-}
-
-.cs-carousel__track-container {
-  max-width: 90%;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-  border-radius: 8px;
-}
-
-.cs-carousel__track {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: flex;
-  transition: transform 300ms ease-in-out;
-  position: relative;
-  z-index: 1;
-}
-
-.cs-carousel__slide {
-  flex: 0 0 100%;
-  width: 100%;
-  position: relative;
-}
-
-.cs-carousel__slide img {
-  display: block;
-  /* width: 100%; */
-  width: 90%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cs-carousel__slide figcaption {
-  text-align: center;
-  font-size: .85em;
-  color: var(--color-grey-text-light);
-  padding: 0.75rem 1rem;
-  max-width: var(--max-width-inner-text-desktop);
-  margin: 0 auto;
-  opacity: 0;
-  transition: opacity 300ms ease-in-out;
-  height: 0;
-  overflow: hidden;
-}
-
-.cs-carousel__slide.current-slide figcaption {
-  opacity: 1;
-  height: auto;
-}
-
-.cs-carousel__button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(30, 30, 30, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-white);
-  transition: background-color 0.2s ease, opacity 0.2s ease;
-  z-index: 2;
-}
-
-.cs-carousel__button:hover {
-    background: rgba(0, 0, 0, 0.6);
-}
-
-.cs-carousel__button .material-symbols-outlined {
-    font-size: 24px;
-    transform: translateX(2px);
-}
-.cs-carousel__button--left .material-symbols-outlined {
-  transform: translateX(4px);
-}
-
-.cs-carousel__button--left {
-  left: 16px;
-}
-
-.cs-carousel__button--right {
-  right: 16px;
-}
-
-.cs-carousel__button.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* === FINAL DOT NAVIGATION STYLES (WITH WIDTH TRANSITION) === */
-
-.cs-carousel__nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  padding-top: 1.5rem;
-  /* Define variables for the dot widths */
-  --dot-base-width: 10px;
-  --dot-expanded-width: 50px; 
-}
-
-.cs-carousel__dot {
-  appearance: none;
-  -webkit-appearance: none;
-  padding: 0;
-  cursor: pointer;
-  /* The visible element is now the button itself */
-  height: var(--dot-base-width);
-  width: var(--dot-base-width); /* Default to base width */
-  background-color: var(--color-grey-dark-card);
-  border: 1px solid var(--color-white);
-  border-radius: 99px; /* Use a large radius for the pill shape */
-
-  /* Animate the width change */
-  transition: width 350ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms ease;
-}
-
-.cs-carousel__dot:hover {
-  background-color: var(--color-grey-text-light);
-  border-color: var(--color-grey-text-light);
-}
-
-.cs-carousel__dot.current-dot {
-  /* Set the active dot to the expanded width */
-  width: var(--dot-expanded-width);
-  background-color: var(--color-white);
-  /* border-color: var(--color-white); */
-  border: none;
-    background: var(--tab-active-gradient);
-  background-clip: padding-box;
-}
-
-/* Custom focus ring for accessibility */
-.cs-carousel__dot:focus {
-  outline: 2px solid #9aa0a6;
-  outline-offset: 2px;
 }

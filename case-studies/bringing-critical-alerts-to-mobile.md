@@ -177,7 +177,7 @@ pageClass: page-case-study
 </div>
 
 <!-- Image / Mockup / Asset Detail View / With and Without Alarms -->
-{% fullWidthImage "/images/case-studies/OMP Mobile Asset Detail View with and Without Alarms.png", "Mobile app interface showing two asset detail screens—one with no active alarms and one with active alarm status grouped by category.", "Fig 3: Asset detail view showing normal and alarm states. Key info like alarm status, reefer mode, and geofence is surfaced in one screen to support fast decisions." %}
+{% fullWidthImage "/images/case-studies/OMP Mobile Asset Detail View with and Without Alarms.png", "Mobile app interface showing two asset detail screens, one with no active alarms and one with active alarm status grouped by category.", "Fig 3: Asset detail view showing normal and alarm states. Key info like alarm status, reefer mode, and geofence is surfaced in one screen to support fast decisions." %}
 
 <!-- Solution / Continuted -->
 <div class="text-content-block after-image">
@@ -210,7 +210,7 @@ pageClass: page-case-study
         </li>
         <li>
             <h4>Foundation for Future Scalability</h4>
-            <div class="content">The MVP was built to scale — with room for future features like commands and support for more user roles — without needing a full redesign later.</div>
+            <div class="content">The MVP was built to scale, with room for future features like commands and support for more user roles, without needing a full redesign later.</div>
         </li>
     </ul>
     <p>While usage data wasn't available at the time of handoff, leadership aligned on three target outcomes to define MVP success: reduce average alarm response time by 50%, cut unacknowledged alert duplicates by 40%, and enable 75% of alarm handling to be done on mobile. These KPIs were set as benchmarks for adoption and operational ROI.</p>

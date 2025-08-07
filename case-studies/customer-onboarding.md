@@ -3,7 +3,7 @@ layout: case-study.njk
 title: "Transforming Enterprise Customer Onboarding"
 templateEngineOverride: njk,md 
 permalink: /case-studies/customer-onboarding/
-summary: "Unraveling a complex B2B onboarding maze: How mapping the customer onboarding process into the company's first-ever Service Blueprint—and leading a UX-driven investigation—uncovered systemic flaws and unlocked faster revenue."
+summary: "Unraveling a complex B2B onboarding maze: How mapping the customer onboarding process into the company's first-ever Service Blueprint, and leading a UX-driven investigation, uncovered systemic flaws and unlocked faster revenue."
 project_role: "Lead UX Strategist / Process Improvement Lead"
 team_members: "Executive Leadership (CTO), Product Management, Data Analysts, and stakeholders across 10+ departments (e.g., Sales, Legal, Finance, Technical Support)."
 tools_used: "Stakeholder Interviews, Customer Journey Mapping, Service Blueprinting, Business Process Re-engineering (BPR), Support Ticket Data Analysis (JIRA, Salesforce), Figma."
@@ -203,7 +203,7 @@ heroCardsHTML: |
         </li>
         <li>
             <h4>Symptomatic Redundancy: The "Onboarding Team" Workaround</h4>
-            <div class="content">Process mapping revealed that the "Onboarding Team" was a costly workaround. Their main job was fixing account setups from Sales — rework caused by upstream process issues. They added no value, but existed to patch flaws that should've been solved earlier. This became clear only after mapping the full process <span class="fig-reference">(Fig 3)</span>.</div>
+            <div class="content">Process mapping revealed that the "Onboarding Team" was a costly workaround. Their main job was fixing account setups from Sales. They added no value, but existed to patch flaws that should've been solved earlier. This became clear only after mapping the full process <span class="fig-reference">(Fig 3)</span>.</div>
         </li>
     </ul>
 </div>
@@ -219,7 +219,7 @@ heroCardsHTML: |
         </li>
         <li>
             <h4>The "Profile Problem" Epidemic: A Support Nightmare</h4>
-            <div class="content">Data analysis revealed a major issue: <strong class="metric-highlight">nearly 50% of support cases (28,000+) stemmed from errors in profile creation</strong> and device configuration during setup — a consistent pain point across both customer and internal process maps.</div>
+            <div class="content">Data analysis revealed a major issue: <strong class="metric-highlight">nearly 50% of support cases (28,000+) stemmed from errors in profile creation</strong> and device configuration during setup, which was a consistent pain point across both customer and internal process maps.</div>
         </li>     
     </ul>
     <p>These findings provided clear evidence that the onboarding process needed a strategic overhaul to align with business goals and customer expectations.</p>
@@ -327,7 +327,7 @@ heroCardsHTML: |
     <ul>
         <li>
             <h4>Accelerated Time-to-Revenue and Reduced Delays</h4>
-            <div class="content">The biggest gain: a faster onboarding timeline. Account Setup processing dropped from 2.5 weeks to ~0.5 days, and profile improvements were projected to eliminate ~12,165 delay days annually. Fixing credit holds was projected to cut 1-2 day delays from 100% of new customer orders—highlighting a major opportunity to accelerate revenue.</div>
+            <div class="content">The biggest gain: a faster onboarding timeline. Account Setup processing dropped from 2.5 weeks to ~0.5 days, and profile improvements were projected to eliminate ~12,165 delay days annually. Fixing credit holds was projected to cut 1-2 day delays from 100% of new customer orders highlighting a major opportunity to accelerate revenue.</div>
         </li>
         <li>
             <h4>Significant Operational Efficiency and Cost Savings</h4>

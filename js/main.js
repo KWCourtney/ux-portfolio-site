@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const tabsNavHeight = caseStudyTabsNav.offsetHeight;
                     const targetElementRect = targetElement.getBoundingClientRect();
                     const targetElementOffsetTop = targetElementRect.top + window.scrollY;
-                   let scrollToPosition = targetElementOffsetTop - headerOffset - tabsNavHeight - 5;
+                    let scrollToPosition = targetElementOffsetTop - headerOffset - tabsNavHeight - 5;
                     window.scrollTo({ top: scrollToPosition, behavior: 'smooth' });
                 }
             }
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.body.style.removeProperty('--sticky-nav-height');
                 }
             }
-            
+
             let currentActiveTabId = null;
             const activationLineInViewport = headerOffset + currentTabsNavHeight + 20;
 
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     currentActiveTabId = sectionDiv.id;
                 }
             }
-            
+
             tabsList.querySelectorAll('a').forEach(tabLink => {
                 tabLink.classList.toggle('active', tabLink.dataset.sectionId === currentActiveTabId);
             });
@@ -274,17 +274,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (carouselContainer && leftArrow && rightArrow) {
         const updateArrowState = () => {
-            // Use a small buffer to account for rounding errors
             const scrollEnd = carouselContainer.scrollWidth - carouselContainer.clientWidth;
-            
-            // Hide left arrow if at the beginning
+
             if (carouselContainer.scrollLeft <= 1) {
                 leftArrow.classList.add('hidden');
             } else {
                 leftArrow.classList.remove('hidden');
             }
 
-            // Hide right arrow if at the end
             if (carouselContainer.scrollLeft >= scrollEnd - 1) {
                 rightArrow.classList.add('hidden');
             } else {
@@ -316,108 +313,102 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Use a ResizeObserver to update arrows when the container size changes
-        const resizeObserver = new ResizeObserver(() => {
-            updateArrowState();
-        });
+        const resizeObserver = new ResizeObserver(updateArrowState);
         resizeObserver.observe(carouselContainer);
-
         carouselContainer.addEventListener('scroll', updateArrowState);
-        
-        // Initial check on page load
         updateArrowState();
     }
-});
+    
+    // --- Case Study Image Carousel Logic (with button centering) ---
+    function setupCaseStudyCarousels() {
+        const carousels = document.querySelectorAll('.cs-carousel-container');
 
-// --- Case Study Image Carousel Logic ---
-document.addEventListener('DOMContentLoaded', () => {
-    // Find ALL carousels on the page instead of just the first one.
-    const carousels = document.querySelectorAll('.cs-carousel-container');
+        function centerCarouselButtons(carousel) {
+            const image = carousel.querySelector('.cs-carousel__slide.current-slide img');
+            const leftButton = carousel.querySelector('.cs-carousel__button--left');
+            const rightButton = carousel.querySelector('.cs-carousel__button--right');
 
-    // Loop through each carousel and set it up individually.
-    carousels.forEach(carousel => {
-        const track = carousel.querySelector('.cs-carousel__track');
-        // If a carousel has no track, skip it.
-        if (!track) return;
+            if (image && leftButton && rightButton) {
+                if (image.complete) {
+                    const imageHeight = image.offsetHeight;
+                    const buttonHeight = leftButton.offsetHeight;
+                    const topPosition = (imageHeight / 2) - (buttonHeight / 2);
+                    
+                    leftButton.style.top = `${topPosition}px`;
+                    rightButton.style.top = `${topPosition}px`;
+                } else {
+                    image.onload = () => centerCarouselButtons(carousel);
+                }
+            }
+        }
 
-        const slides = Array.from(track.children);
-        const nextButton = carousel.querySelector('.cs-carousel__button--right');
-        const prevButton = carousel.querySelector('.cs-carousel__button--left');
-        const dotsNav = carousel.querySelector('.cs-carousel__nav');
-        const dots = Array.from(dotsNav.children);
+        carousels.forEach(carousel => {
+            const track = carousel.querySelector('.cs-carousel__track');
+            if (!track) return;
 
-        const moveToSlide = (targetIndex) => {
-            const currentSlide = track.querySelector('.current-slide');
-            const currentDot = dotsNav.querySelector('.current-dot');
+            const slides = Array.from(track.children);
+            const nextButton = carousel.querySelector('.cs-carousel__button--right');
+            const prevButton = carousel.querySelector('.cs-carousel__button--left');
+            const dotsNav = carousel.querySelector('.cs-carousel__nav');
+            if (!dotsNav || !nextButton || !prevButton) return;
+            const dots = Array.from(dotsNav.children);
+
+            const updateSlide = (targetIndex) => {
+                const currentSlide = track.querySelector('.current-slide');
+                const currentDot = dotsNav.querySelector('.current-dot');
+                
+                if (!slides[targetIndex] || !dots[targetIndex]) return;
+
+                const targetSlide = slides[targetIndex];
+                const targetDot = dots[targetIndex];
+
+                track.style.transform = `translateX(-${targetIndex * 100}%)`;
+                if (currentSlide) currentSlide.classList.remove('current-slide');
+                targetSlide.classList.add('current-slide');
+
+                if (currentDot) currentDot.classList.remove('current-dot');
+                targetDot.classList.add('current-dot');
+
+                if (targetIndex === 0) {
+                    prevButton.classList.add('is-hidden');
+                    nextButton.classList.remove('is-hidden');
+                } else if (targetIndex === slides.length - 1) {
+                    prevButton.classList.remove('is-hidden');
+                    nextButton.classList.add('is-hidden');
+                } else {
+                    prevButton.classList.remove('is-hidden');
+                    nextButton.classList.remove('is-hidden');
+                }
+                
+                // Recenter buttons after slide change
+                centerCarouselButtons(carousel);
+            };
+
+            nextButton.addEventListener('click', () => {
+                const currentIndex = slides.findIndex(slide => slide.classList.contains('current-slide'));
+                const nextIndex = currentIndex + 1;
+                if (nextIndex < slides.length) updateSlide(nextIndex);
+            });
+
+            prevButton.addEventListener('click', () => {
+                const currentIndex = slides.findIndex(slide => slide.classList.contains('current-slide'));
+                const prevIndex = currentIndex - 1;
+                if (prevIndex >= 0) updateSlide(prevIndex);
+            });
+
+            dotsNav.addEventListener('click', e => {
+                const targetDot = e.target.closest('button');
+                if (!targetDot) return;
+                const targetIndex = dots.findIndex(dot => dot === targetDot);
+                updateSlide(targetIndex);
+            });
             
-            // Exit if the target doesn't exist (can happen with bad data)
-            if (!slides[targetIndex] || !dots[targetIndex]) return;
-
-            const targetSlide = slides[targetIndex];
-            const targetDot = dots[targetIndex];
-
-            // Move the track
-            track.style.transform = `translateX(-${targetIndex * 100}%)`;
-
-            // Update slide classes
-            if (currentSlide) {
-                currentSlide.classList.remove('current-slide');
-            }
-            targetSlide.classList.add('current-slide');
-
-            // Update dot classes
-            if (currentDot) {
-                currentDot.classList.remove('current-dot');
-            }
-            targetDot.classList.add('current-dot');
-
-            // Update arrow visibility
-            if (targetIndex === 0) {
-                prevButton.classList.add('is-hidden');
-                nextButton.classList.remove('is-hidden');
-            } else if (targetIndex === slides.length - 1) {
-                prevButton.classList.remove('is-hidden');
-                nextButton.classList.add('is-hidden');
-            } else {
-                prevButton.classList.remove('is-hidden');
-                nextButton.classList.remove('is-hidden');
-            }
-        };
-
-        // Right arrow click
-        nextButton.addEventListener('click', () => {
-            const currentSlide = track.querySelector('.current-slide');
-            const currentIndex = slides.findIndex(slide => slide === currentSlide);
-            const nextIndex = currentIndex + 1;
-            if (nextIndex < slides.length) {
-                moveToSlide(nextIndex);
-            }
+            // Initial setup
+            centerCarouselButtons(carousel);
+            // Re-center on resize
+            window.addEventListener('resize', () => centerCarouselButtons(carousel));
         });
+    }
+    setupCaseStudyCarousels();
 
-        // Left arrow click
-        prevButton.addEventListener('click', () => {
-            const currentSlide = track.querySelector('.current-slide');
-            const currentIndex = slides.findIndex(slide => slide === currentSlide);
-            const prevIndex = currentIndex - 1;
-            if (prevIndex >= 0) {
-                moveToSlide(prevIndex);
-            }
-        });
-
-        // Dot navigation click
-        dotsNav.addEventListener('click', e => {
-            const targetDot = e.target.closest('button');
-            if (!targetDot) return;
-
-            const targetIndex = dots.findIndex(dot => dot === targetDot);
-            moveToSlide(targetIndex);
-        });
-
-        // Initialize first slide state
-        const initialSlide = track.querySelector('.cs-carousel__slide');
-        const initialDot = dotsNav.querySelector('.cs-carousel__dot');
-        if (initialSlide) initialSlide.classList.add('current-slide');
-        if (initialDot) initialDot.classList.add('current-dot');
-
-    });
 });

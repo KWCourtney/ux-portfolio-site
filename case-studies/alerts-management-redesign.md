@@ -99,9 +99,15 @@ heroCardsHTML: |
     <p>Before users could even begin setting up an alert, they landed on a page <span class="fig-reference">(Fig 1)</span> labeled "Notifications": a term that didn't reflect the task at hand.  This kind of mismatch in language was one of many signs the UI had been built without talking to real users. As part of the redesign, we renamed it "Alerts" to better match what users were actually doing.</p>
 </div> 
 
-<!-- Fig 1: The legacy alert landing page UI -->
+<!-- Fig 1: The legacy alert landing page UI 
 {% fullWidthImage "/images/case-studies/Alerts Landing Pre Update Stich AI Update Larger Size v2.png", 
+"The original landing page labeled 'Notifications', showing a bare-bones table with unclear structure, outdated terminology, and no obvious path to create or manage alerts.", "Fig 1: The pre-update landing page for Alerts (then called Notifications). The stripped-down layout, developer-driven terminology, and lack of filtering or guidance left users guessing where to begin." %}  -->
+
+<!-- Fig 1: The legacy alert landing page UI -->
+{% fullWidthImage "/images/case-studies/AssetNotificationsLegacy.png", 
 "The original landing page labeled 'Notifications', showing a bare-bones table with unclear structure, outdated terminology, and no obvious path to create or manage alerts.", "Fig 1: The pre-update landing page for Alerts (then called Notifications). The stripped-down layout, developer-driven terminology, and lack of filtering or guidance left users guessing where to begin." %}
+
+
 <!-- Challenge / Existing Problem -->
 <div  class="text-content-block">
     <h3>The Existing Problem: A Clunky and Error-Prone Experience</h3>
@@ -126,7 +132,7 @@ heroCardsHTML: |
 </div>
 
 <!-- Fig 2: The legacy alert configuration UI -->
-{% fullWidthImage "/images/case-studies/Alerts Management Old UI.svg", "Screenshot of the old alert setup screen, with a long single-page accordion layout featuring collapsed sections like Message, Asset, and Temperature. The interface lacks structure and offers no guidance.", "Fig 2: The original alert configuration screen used a single-page accordion that showed everything at once, with no guidance or visual hierarchy. Users had to scroll, expand sections, and guess what applied—making setup slow, confusing, and error-prone." %}
+{% fullWidthImage "/images/case-studies/Alerts Management Old UI.png", "Screenshot of the old alert setup screen, with a long single-page accordion layout featuring collapsed sections like Message, Asset, and Temperature. The interface lacks structure and offers no guidance.", "Fig 2: The original alert configuration screen used a single-page accordion that showed everything at once, with no guidance or visual hierarchy. Users had to scroll, expand sections, and guess what applied, which made setup slow, confusing, and error-prone." %}
 
 <!-- Business and User Impact -->
  <div class="text-content-block after-image">
@@ -142,14 +148,14 @@ heroCardsHTML: |
         </li>
         <li>
             <h4>Support Overload and Alert Fatigue</h4>
-            <div class="content">Poorly designed defaults and unclear options led to excessive and often irrelevant alerts. Teams were flooded with notifications many of them unnecessary—which eroded trust and created more work for support.</div>
+            <div class="content">Poorly designed defaults and unclear options led to excessive and often irrelevant alerts. Teams were flooded with notifications many of them unnecessary, which eroded trust and created more work for support.</div>
         </li>
         <li>
             <h4>Frustration and Workflow Disruption</h4>
             <div class="content">The UI didn't help users succeed. It slowed them down, caused uncertainty, and introduced errors into a critical operational tool. The end result was frustration, duplicated effort, and wasted time.</div>
         </li>
     </ul>
-    <p>Bottom line: the module needed more than a facelift—it needed to be rebuilt to work the way users actually think and work.</p>
+    <p>Bottom line: the module needed more than a facelift. It needed to be rebuilt to work the way users actually think and work.</p>
 </div>
 
 <!-- User Quotation -->
@@ -212,14 +218,37 @@ heroCardsHTML: |
   </ul>
 </div>
 
-<!-- Fig 4:  Wireframe / Landing Page Update -->
-{% fullWidthImage "/images/case-studies/Alerts Management Wireframe Landing Page.png", "A wireframe of the redesigned Alerts Management landing page. It shows a simplified dashboard layout with a central table of existing alerts, search and filter options above the list, and an 'Add New' button.", "Fig 4: A wireframe of the redesigned central dashboard. The simplified layout and embedded filtering tools addressed user pain points around finding and managing alerts. This new landing page served as the home base for alert workflows, replacing the generic 'Notifications' view." %}
 
-<!-- Fig 5:  Wireframe / Landing Page with Advanced Search Update -->
-{% fullWidthImage "/images/case-studies/Alerts Management Wireframe 01 Advanced Search Panel.png", "A wireframe of the alerts dashboard showing the 'Advanced Search' panel open on the right, with filters for organizational level, status, owner, and date range.", "Fig 5: The 'Advanced Search' panel, designed for power users who needed more granular control. Our research showed that simple filters were insufficient for users managing hundreds of alerts across different teams. This feature directly enabled complex querying, significantly reducing the time users spent hunting for specific information." %}
-
-<!-- Fig 6:  Wireframe / Add Edit Modal Update -->
-{% fullWidthImage "/images/case-studies/Alerts Management Wireframe Add New Modal.png", "A wireframe showing the 'Add New Alert' wizard as a modal window. The 'Details' step is active, with a vertical navigation on the left showing all five steps of the process.", "Fig 6: A wireframe of the 'Add New Alert' wizard, showing the first step of the new guided workflow. By breaking the process into logical sections like 'Details' and using a clear stepper for navigation, this design directly tackles the cognitive load and confusion of the old accordion layout. This structure ensures users build the alert on a solid foundation before moving to more complex options." %}
+<!-- Images / Carousel / Wireframes -->
+<div class="cs-carousel-container">
+    <div class="cs-carousel__track-container">
+        <ul class="cs-carousel__track">
+            <li class="cs-carousel__slide current-slide">
+                <img src="/images/case-studies/Alerts Management Wireframe Landing Page.png" alt="A wireframe of the redesigned Alerts Management landing page. It shows a simplified dashboard layout with a central table of existing alerts, search and filter options above the list, and an 'Add New' button.">
+                <figcaption>Fig 4: A wireframe of the redesigned central dashboard. The simplified layout and embedded filtering tools addressed user pain points around finding and managing alerts. This new landing page served as the home base for alert workflows, replacing the generic 'Notifications' view.</figcaption>
+            </li>
+            <li class="cs-carousel__slide">
+                <img src="/images/case-studies/AlertsManagementWireframe01AdvancedSearchPanel.png" alt="A wireframe of the alerts dashboard showing the 'Advanced Search' panel open on the right, with filters for organizational level, status, owner, and date range.">
+                <figcaption>Fig 5: The 'Advanced Search' panel, designed for power users who needed more granular control. Our research showed that simple filters were insufficient for users managing hundreds of alerts across different teams. This feature directly enabled complex querying, significantly reducing the time users spent hunting for specific information.</figcaption>
+            </li>
+            <li class="cs-carousel__slide">
+                <img src="/images/case-studies/Alerts Management Wireframe Add New Modal.png" alt="A wireframe showing the 'Add New Alert' wizard as a modal window. The 'Details' step is active, with a vertical navigation on the left showing all five steps of the process.">
+                <figcaption>Fig 6: A wireframe of the 'Add New Alert' wizard, showing the first step of the new guided workflow. By breaking the process into logical sections like 'Details' and using a clear stepper for navigation, this design directly tackles the cognitive load and confusion of the old accordion layout. This structure ensures users build the alert on a solid foundation before moving to more complex options.</figcaption>
+            </li>
+        </ul>
+        <button class="cs-carousel__button cs-carousel__button--left is-hidden">
+            <span class="material-symbols-outlined">arrow_back_ios</span>
+        </button>
+        <button class="cs-carousel__button cs-carousel__button--right">
+            <span class="material-symbols-outlined">arrow_forward_ios</span>
+        </button>
+    </div>
+    <div class="cs-carousel__nav">
+        <button class="cs-carousel__dot current-dot"></button>
+        <button class="cs-carousel__dot"></button>
+        <button class="cs-carousel__dot"></button>
+    </div>
+</div>
 
 <!-- Research -->
 <div id="alerts-research" class="text-content-block" data-tab-label="Research">
@@ -244,6 +273,7 @@ heroCardsHTML: |
         <div class="content">Collected input from internal teams and reviewed in-product feedback to round out the picture.</div>
     </li>
   </ul>
+  <!-- Research / Key Insights -->
   <h3>Key Insights from Research</h3>
   <ul>
     <li>
@@ -265,7 +295,32 @@ heroCardsHTML: |
         <div class="content">Users wanted simpler ways to search, filter, and manage alerts and preferred layouts that matched the other tools they used.</div>
     </li>
   </ul>
-  <p>These findings made the path forward clear: redesign the experience from the ground up with better structure, smarter workflows, and fewer places to get stuck.</p>
+  <!-- Research / Personas -->
+  <h3>Personas and Key User Needs</h3>
+    <ul>
+    <li>
+        <h4>Fleet Manager</h4>
+        <div class="content">
+        Manages alerts for 100s of vehicles across multiple geofences.<br>
+        Needs bulk editing, filtering, and confident delivery of critical alerts.
+        </div>
+    </li>
+    <li>
+        <h4>Ops Admin</h4>
+        <div class="content">
+        Handles day-to-day setup and maintenance of alerts.<br>
+        Needs a reliable, step-by-step flow to avoid costly errors.
+        </div>
+    </li>
+    <li>
+        <h4>Support Tech</h4>
+        <div class="content">
+        Investigates and resolves issues with alert setup or failures.<br>
+        Needs predictable behavior and visibility into what users configured.
+        </div>
+    </li>
+    </ul>
+    <p>These findings made the path forward clear: redesign the experience from the ground up with better structure, smarter workflows, and fewer places to get stuck.</p>
 </div>
 
 <!-- Key Pain Points -->
@@ -274,7 +329,7 @@ heroCardsHTML: |
     <div class="pain-point-card">
         <h4 class="pain-point-card-number">Pain Point</h4>
         <h5 class="pain-point-card-name">Confusing Terminology</h5>
-        <p class="pain-point-card-description">Legacy term "Notifications" confused users who were trying to set up alerts—not view messages.</p>
+        <p class="pain-point-card-description">Legacy term "Notifications" confused users who were trying to set up alerts, not view messages.</p>
     </div>
     <div class="pain-point-card">
         <h4 class="pain-point-card-number">Pain Point</h4>
@@ -300,16 +355,36 @@ heroCardsHTML: |
     </li>
     <li>
         <h4>Centralized Alert List and Efficient Management</h4>
-        <div class="content">We replaced the scattered legacy layout with a centralized dashboard <span class="fig-reference">(Fig 7)</span> for managing alerts at scale. A clean, filterable list and quick search made finding alerts faster. The new Advanced Search panel <span class="fig-reference">(Fig 8)</span> supported complex queries—critical for teams managing hundreds of alerts. This layout became the new home base for user workflows.</div>
+        <div class="content">We replaced the scattered legacy layout with a centralized dashboard <span class="fig-reference">(Fig 7)</span> for managing alerts at scale. A clean, filterable list and quick search made finding alerts faster. The new Advanced Search panel <span class="fig-reference">(Fig 8)</span> supported complex queries critical for teams managing hundreds of alerts. This layout became the new home base for user workflows.</div>
     </li>
   </ul>
 </div>
 
-<!-- Fig 7 / Landing Page Update -->
-{% fullWidthImage "/images/case-studies/Alert Management Mockup 01 Landing Page.png", "A high-fidelity mockup of the redesigned Alerts Management dashboard. It shows a scannable data table, search bar, filter controls, and consistent UI hierarchy for managing alerts.", "Fig 7: The redesigned Alerts Management dashboard. This high-fidelity mockup translates the wireframe into a clean, scannable interface. Visual hierarchy, embedded filtering, and terminology fixes made it faster for users to find and manage alerts—replacing the disjointed experience of the old system." %}
-
-<!-- Fig 8 / Landing Page with Advanced Search Update -->
-{% fullWidthImage "/images/case-studies/Alert Management Mockup 01 Advanced Search Panel.png", "A high-fidelity mockup of the Alerts dashboard with the 'Advanced Search' panel open on the right, showing multiple dropdowns and filters for narrowing alert results.", "Fig 8: Advanced Search panel for power users. This high-fidelity view shows the final design for complex querying. User research revealed the need for advanced filtering—especially for teams managing hundreds of alerts. The panel's layout, tooltips, and clear labeling made it easier to find what matters, faster." %}
+<!-- Images / Fig 7 + 8 / Landing Page Update + Landing Page with Advanced Search Update -->
+<div class="cs-carousel-container">
+    <div class="cs-carousel__track-container">
+        <ul class="cs-carousel__track">
+            <li class="cs-carousel__slide current-slide">
+                <img src="/images/case-studies/Alert Management Mockup 01 Landing Page.png" alt="A high-fidelity mockup of the redesigned Alerts Management dashboard. It shows a scannable data table, search bar, filter controls, and consistent UI hierarchy for managing alerts.">
+                <figcaption>Fig 7: The redesigned Alerts Management dashboard. This high-fidelity mockup translates the wireframe into a clean, scannable interface. Visual hierarchy, embedded filtering, and terminology fixes made it faster for users to find and manage alerts replacing the disjointed experience of the old system.</figcaption>
+            </li>
+            <li class="cs-carousel__slide">
+                <img src="/images/case-studies/Alert Management Mockup 01 Advanced Search Panel.png" alt="A high-fidelity mockup of the Alerts dashboard with the 'Advanced Search' panel open on the right, showing multiple dropdowns and filters for narrowing alert results.">
+                <figcaption>Fig 8: Advanced Search panel for power users. This high-fidelity view shows the final design for complex querying. User research revealed the need for advanced filtering, especially for teams managing hundreds of alerts. The panel's layout, tooltips, and clear labeling made it easier to find what matters, faster.</figcaption>
+            </li>
+        </ul>
+        <button class="cs-carousel__button cs-carousel__button--left is-hidden">
+            <span class="material-symbols-outlined">arrow_back_ios</span>
+        </button>
+        <button class="cs-carousel__button cs-carousel__button--right">
+            <span class="material-symbols-outlined">arrow_forward_ios</span>
+        </button>
+    </div>
+    <div class="cs-carousel__nav">
+        <button class="cs-carousel__dot current-dot"></button>
+        <button class="cs-carousel__dot"></button>
+    </div>
+</div>
 
 <!-- Solution Continued -->
 <div class="text-content-block after-image">
@@ -336,7 +411,7 @@ heroCardsHTML: |
                         <span class="key-enhancement-label">Summary Review:</span>  A final review step summarizes all selections and lets users verify everything before creating a new alert. This small but critical step boosted confidence and cut down on avoidable errors.
                     </li>
                     <li>
-                        <span class="key-enhancement-label">Reduced Errors and Boosted Confidence:</span> Together, these changes made setup faster, easier, and less stressful—leading to fewer errors and higher satisfaction.
+                        <span class="key-enhancement-label">Reduced Errors and Boosted Confidence:</span> Together, these changes made setup faster, easier, and less stressful, which led to fewer errors and higher satisfaction.
                     </li>
                     <li>
                         <span class="key-enhancement-label">Accessibility Standards:</span> All components followed WCAG AA guidelines, including color contrast and keyboard navigation support making the interface accessible for all users.
@@ -347,14 +422,36 @@ heroCardsHTML: |
     </ul>
 </div>
 
-<!-- Fig 9 / Add New Modal Update / Recipients -->  
-{% fullWidthImage "/images/case-studies/Alert Management Mockup 02 Recipients Tab.png", "A high-fidelity mockup of the 'Recipients' step in the alert creation wizard. The screen shows dropdown inputs for email and SMS recipients, including a searchable list of individual users and predefined groups.", "Fig 9: The 'Recipients' step was designed to dramatically reduce setup errors and increase delivery confidence. The old system relied on free-text fields, which were prone to typos and missed contacts. This updated design introduces a searchable, structured list of existing users and recipient groups, improving speed, accuracy, and consistency." %}
-
-<!-- Fig 10 / Add New Modal Update / Schedule -->  
-{% fullWidthImage "/images/case-studies/Alert Management Mockup 01 Schedule Tab.png", "A high-fidelity mockup of the 'Schedule' step in the alert creation wizard. The interface displays options to select specific days and time ranges for alert delivery.", "Fig 10: The 'Schedule' step gives users control over when alerts are delivered a direct solution to 'alert fatigue' identified in user interviews. By setting alerts to only trigger during working hours or critical windows, this feature ensures messages arrive when they're actually actionable." %}
-
-<!-- Fig 11 / Add New Modal Update / Summary -->  
-{% fullWidthImage "/images/case-studies/Alert Management Mockup 01 Summary Tab.png", "A high-fidelity mockup of the 'Summary' step in the alert creation wizard. It shows a full recap of configuration choices with editable sections and a 'Create Alert' button.", "Fig 11: The final 'Summary' step gives users a last opportunity to review their entire configuration. Research showed users felt anxious submitting alerts without knowing what they'd selected. This dedicated review step builds confidence, reduces mistakes, and mirrors familiar review patterns from other enterprise workflows." %}
+<!-- Images / Fig 9, 10 + 11 -->
+<div class="cs-carousel-container">
+    <div class="cs-carousel__track-container">
+        <ul class="cs-carousel__track">
+            <li class="cs-carousel__slide current-slide">
+                <img src="/images/case-studies/Alert Management Mockup 02 Recipients Tab.png" alt="A high-fidelity mockup of the 'Recipients' step in the alert creation wizard. The screen shows dropdown inputs for email and SMS recipients, including a searchable list of individual users and predefined groups.">
+                <figcaption>Fig 9: The 'Recipients' step was designed to dramatically reduce setup errors and increase delivery confidence. The old system relied on free-text fields, which were prone to typos and missed contacts. This updated design introduces a searchable, structured list of existing users and recipient groups, improving speed, accuracy, and consistency.</figcaption>
+            </li>
+            <li class="cs-carousel__slide">
+                <img src="/images/case-studies/Alert Management Mockup 01 Schedule Tab.png" alt="A high-fidelity mockup of the 'Schedule' step in the alert creation wizard. The interface displays options to select specific days and time ranges for alert delivery.">
+                <figcaption>Fig 10: The 'Schedule' step gives users control over when alerts are delivered, which is a direct solution to 'alert fatigue' identified in user interviews. By setting alerts to only trigger during working hours or critical windows, this feature ensures messages arrive when they're actually actionable.</figcaption>
+            </li>
+            <li class="cs-carousel__slide">
+                <img src="/images/case-studies/Alert Management Mockup 01 Summary Tab.png" alt="A high-fidelity mockup of the 'Summary' step in the alert creation wizard. It shows a full recap of configuration choices with editable sections and a 'Create Alert' button.">
+                <figcaption>Fig 11: The final 'Summary' step gives users a last opportunity to review their entire configuration. Research showed users felt anxious submitting alerts without knowing what they'd selected. This dedicated review step builds confidence, reduces mistakes, and mirrors familiar review patterns from other enterprise workflows.</figcaption>
+            </li>
+        </ul>
+        <button class="cs-carousel__button cs-carousel__button--left is-hidden">
+            <span class="material-symbols-outlined">arrow_back_ios</span>
+        </button>
+        <button class="cs-carousel__button cs-carousel__button--right">
+            <span class="material-symbols-outlined">arrow_forward_ios</span>
+        </button>
+    </div>
+    <div class="cs-carousel__nav">
+        <button class="cs-carousel__dot current-dot"></button>
+        <button class="cs-carousel__dot"></button>
+        <button class="cs-carousel__dot"></button>
+    </div>
+</div>
 
 <!-- Impact -->
 <div id="alerts-impact" class="text-content-block" data-tab-label="Impact">
@@ -416,7 +513,7 @@ heroCardsHTML: |
         <li>
             <h4>Ensuring Design Fidelity Without a Mature Design System</h4>
             <div class="content"><p>Without a component library or mature design system, maintaining consistency required hands-on vigilance. I solved this through a detailed spec, regular design reviews, and a firm commitment to quality, including halting one release to ensure fidelity.</p>
-            <p>This project also exposed the systemic gaps that later led me to create our first design system—featured in a separate case study.</p></div>
+            <p>This project also exposed the systemic gaps that later led me to create our first design system, which is featured in a separate case study.</p></div>
         </li>
         <li>
             <h4>Simplifying Inherent Complexity</h4>
@@ -440,5 +537,5 @@ heroCardsHTML: |
     </ul>
     <h3>Final Thoughts and Next Steps</h3>
     <p>The Alerts redesign turned a frustrating legacy tool into an intuitive, modern experience. It worked because we grounded the solution in real user needs, then executed it with rigor from research to spec to delivery. My consistent focus on quality and user value ensured we didn't just launch something better, but that we launched something teams could trust.</p>
-    <p>The <strong class="metric-highlight">30% drop in support tickets</strong> and <strong class="metric-highlight">85% boost in user confidence</strong> proved that a better UX wasn't just possible—it was measurable. The redesigned system reduced risk, improved productivity, and supported our customers' operational integrity. It's a clear example of how strategic, detail-driven UX delivers business-critical value in complex enterprise environments.</p>
+    <p>The <strong class="metric-highlight">30% drop in support tickets</strong> and <strong class="metric-highlight">85% boost in user confidence</strong> proved that a better UX wasn't just possible, it was measurable. The redesigned system reduced risk, improved productivity, and supported our customers' operational integrity. It's a clear example of how strategic, detail-driven UX delivers business-critical value in complex enterprise environments.</p>
 </div>

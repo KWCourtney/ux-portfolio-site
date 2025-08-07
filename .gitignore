@@ -6,3 +6,6 @@ _site/
 
 # Exclude all zip files
 *.zip
+
+# Exclude a specific file in the root
+test.html

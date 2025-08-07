@@ -33,8 +33,8 @@ module.exports = function(eleventyConfig) {
     return [
       {
         key: "Work",
-        title: "Work", // This title is for the main nav link
-        url: "/#work"  // The URL for the main nav link
+        title: "Work", 
+        url: "/#work"  
       },
       {
         key: "About",
@@ -45,7 +45,7 @@ module.exports = function(eleventyConfig) {
         key: "Resume",
         title: "Resume",
         url: "https://www.dropbox.com/scl/fo/wpen8quxv5i9tgvecyfsm/ADxKxPqCP2b0PCFWvGNBlZU?rlkey=fqo23mld0pha8ezhkr2ek6egb&st=1qnexu8n&dl=0",
-        isExternal: true // Custom property to handle external links
+        isExternal: true 
       },
       {
         key: "Contact",
