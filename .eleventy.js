@@ -42,6 +42,11 @@ module.exports = function(eleventyConfig) {
         url: "/about/"
       },
       {
+        key: "Process",
+        title: "Process",
+        url: "/process/"
+      },
+      {
         key: "Resume",
         title: "Resume",
         url: "https://www.dropbox.com/scl/fo/wpen8quxv5i9tgvecyfsm/ADxKxPqCP2b0PCFWvGNBlZU?rlkey=fqo23mld0pha8ezhkr2ek6egb&st=1qnexu8n&dl=0",

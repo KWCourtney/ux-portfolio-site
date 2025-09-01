@@ -13,7 +13,6 @@
   --color-grey-icon-placeholder: #3A3A3C;
   --color-grey-border: #2c2c2e;
   --color-grey-border-cards: rgba(74,80,80,.6);
-  /* --color-grey-text-light: #9aa0a6; */
    --color-grey-text-light: #aab0b6;
   --color-grey-text-medium: #c0c0c0;
   --color-grey-text-dark: #8E8E93;
@@ -74,6 +73,9 @@
   --list-check-icon-color: var(--color-accent-blue);
   --list-item-icon-padding: 2.2rem;
   --list-check-icon-top-offset: -0.2em;
+
+  --pain-point-card-number-bg: #1f3760;
+  --pain-point-card-number-text: #d3e3fd;
 }
 
 /* ==========================================================================
@@ -484,36 +486,14 @@ div {
    General Page & Hero Styles
    ========================================================================== */
 
-/* .hero-section {
-  padding-bottom: 2.25rem;
-  text-align: left;
-  border: 1px solid red;
-}
-.hero-section h1 {
-  font-size: 2rem;
-  font-weight: 400;
-  letter-spacing: -1px;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-} */
 .h1-second-line {
   display: inline-block;
   margin-top: 0.25em;
 }
-/* .hero-section .subtext {
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-  line-height: var(--mono-line-height);
-  max-width: 55ch;
-  border: 1px solid blue;
-} */
 .page-hero {
   padding-top: 3rem;
   padding-bottom: 2.25rem;
-  /* margin-bottom: 1.5rem; */
   text-align: left;
-
 }
 .page-title {
   font-size: 2.5rem;
@@ -654,16 +634,21 @@ a:hover .work-item-link {
   color: var( --color-white);
 }
 
-/* Add index page carousel here */
-
 
 /* ==========================================================================
-   About and Contact Pages
+   About, UX Process, and Contact Pages
    ========================================================================== */
 
 .about-details {
   padding-top: 2rem;
   padding-bottom: 3rem;
+}
+.page-process .content-section .header-outcome {
+  font-size: 1.3rem;
+  color: var(--color-white);
+  display: block;
+  margin-bottom: 0.25em; 
+  font-weight: 500;
 }
 .skills-list {
   list-style: none;
@@ -829,8 +814,8 @@ body.page-case-study .hero-section .case-study-hero-cards-grid {
   text-transform: uppercase;
   letter-spacing: 0.75px;
   align-self: center;
-  color: #d3e3fd;
-  background-color: #1f3760;
+  color: var(--pain-point-card-number-text);
+  background-color: var(--pain-point-card-number-bg);
 }
 .pain-point-card-name {
   font-size: 1.25rem;
@@ -1006,7 +991,6 @@ body.page-case-study .hero-section .case-study-hero-cards-grid {
   padding-left: 0;
   margin-bottom: 1.5rem;
 }
-
 .text-content-block ul:not(.case-study-overview-list ul):not(.bullet-list) > li,
 .text-content-block ol > li {
   position: relative;
@@ -1016,6 +1000,14 @@ body.page-case-study .hero-section .case-study-hero-cards-grid {
   font-weight: 400;
   color: var(--color-grey-text-light);
   list-style-type: none;
+}
+/* Test */
+.page-process .text-content-block.content-section li::after {
+  content: "";
+  display: block;
+  width: 80%;               
+  border-bottom: 1px solid var(--color-grey-border-cards); 
+  margin-top: 3rem;
 }
 
 .text-content-block ul:not(.case-study-overview-list ul):not(.bullet-list) > li::before,
@@ -1732,7 +1724,7 @@ body.page-case-study .hero-section .case-study-hero-cards-grid {
   }
   body.page-about .page-hero.content-section,
   body.page-contact .page-hero.content-section,
-  .about-details.content-section { 
+  .about-details.content-section, body.page-process .page-hero.content-section { 
     padding-left: 0;
     padding-right: 0;
   }

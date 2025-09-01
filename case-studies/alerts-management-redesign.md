@@ -99,10 +99,6 @@ heroCardsHTML: |
     <p>Before users could even begin setting up an alert, they landed on a page <span class="fig-reference">(Fig 1)</span> labeled "Notifications": a term that didn't reflect the task at hand.  This kind of mismatch in language was one of many signs the UI had been built without talking to real users. As part of the redesign, we renamed it "Alerts" to better match what users were actually doing.</p>
 </div> 
 
-<!-- Fig 1: The legacy alert landing page UI 
-{% fullWidthImage "/images/case-studies/Alerts Landing Pre Update Stich AI Update Larger Size v2.png", 
-"The original landing page labeled 'Notifications', showing a bare-bones table with unclear structure, outdated terminology, and no obvious path to create or manage alerts.", "Fig 1: The pre-update landing page for Alerts (then called Notifications). The stripped-down layout, developer-driven terminology, and lack of filtering or guidance left users guessing where to begin." %}  -->
-
 <!-- Fig 1: The legacy alert landing page UI -->
 {% fullWidthImage "/images/case-studies/AssetNotificationsLegacy.png", 
 "The original landing page labeled 'Notifications', showing a bare-bones table with unclear structure, outdated terminology, and no obvious path to create or manage alerts.", "Fig 1: The pre-update landing page for Alerts (then called Notifications). The stripped-down layout, developer-driven terminology, and lack of filtering or guidance left users guessing where to begin." %}
@@ -168,12 +164,12 @@ heroCardsHTML: |
 <!-- Approach -->
 <div id="alerts-approach" class="text-content-block" data-tab-label="Approach">
     <h2>My Role and Strategic Approach</h2>
-    <p>I led the end-to-end UX design effort to overhaul a business-critical Alerts Management module for a B2B IoT platform. While another UX team member contributed to early research and concepts, I drove the design from strategy through specification and served as the primary UX owner throughout implementation ensuring the final solution met both user and business needs.</p>
+    <p>I led the end-to-end UX design effort to overhaul a business-critical Alerts Management module for a B2B IoT platform. I drove the UX strategy, authored the detailed specifications, and served as the primary UX owner throughout implementation thereby ensuring the final solution met both user and business needs.</p>
     <h3>Key Contributions</h3>
     <ul>
         <li>
             <h4>Comprehensive User Research</h4>
-            <div class="content">Led workshops, user interviews, and support ticket analysis to uncover critical usability issues and workflow blockers in the legacy system. These findings directly informed the redesign strategy.</div>
+            <div class="content">Partnered with product, engineering, and SMEs in focused sessions to align on workflows, terminology, and recurring pain points. Conducted user interviews and support ticket analysis to uncover critical usability issues and workflow blockers. These insights directly informed the design strategy.</div>
         </li>
         <li>
             <h4>Information Architecture and User Flow Design</h4>
@@ -185,7 +181,7 @@ heroCardsHTML: |
         </li>
         <li>
             <h4>Wireframing, Prototyping, and Cross-Functional Collaboration</h4>
-            <div class="content">Wireframed, mocked up, and prototyped key concepts, including the alert creation wizard in <span class="fig-reference">(Fig 3)</span>. I worked closely with Product and Engineering to refine edge cases, confirm feasibility, and get stakeholder alignment before handoff.</div>
+            <div class="content">Wireframed, mocked up, and prototyped key concepts, including the alert creation wizard in <span class="fig-reference">(Fig 3)</span>, then worked closely with Product and Engineering to refine edge cases, confirm feasibility, and align stakeholders on the strategic direction.</div>
         </li>
     </ul>
 </div>
@@ -199,25 +195,42 @@ heroCardsHTML: |
   <ul>
       <li>
         <h4>Streamlining Alert Management</h4>
-        <div class="content">Enable more granular control over alert parameters, e.g. thresholds, conditions, and schedules, and improve the ability to search, filter, and take action from a centralized view. Power users also needed an Advanced Search panel to filter alerts by fields like asset type or status <span class="fig-reference">(Fig 5)</span>. The redesigned dashboard provided a cleaner default layout <span class="fig-reference">(Fig 4)</span>, but the full query capabilities lived in the expandable search panel.</div>
+        <div class="content">
+        Centralize control of alert parameters and improve filtering/search to support both everyday users and power users <span class="fig-reference">(Fig 4 & 5)</span>. Power users gained an Advanced Search panel for complex queries, while the redesigned dashboard provided a cleaner default layout for quick access.</div>
     </li>
     <li>
         <h4>Simplify and Streamline Configuration</h4>
-        <div class="content">Replace the legacy single-page accordion with a step-by-step wizard that's easier to follow. We grounded this decision in competitive benchmarks, user feedback, and internal stakeholder input. An early wireframe of a key step is shown in <span class="fig-reference">(Fig 6)</span>, which illustrates the redesigned step-by-step structure that replaced the accordion layout making the process easier to follow and reducing cognitive load.</div>
+        <div class="content">Replace the legacy accordion with a step-by-step wizard that reduced cognitive load and aligned with our strategy to minimize errors and speed setup. This decision was grounded in user feedback, stakeholder input, and competitive benchmarks <span class="fig-reference">(Fig 6).</span></div>
     </li>
     <li>
         <h4>Building Trust and Removing Guesswork</h4>
-        <div class="content">
-            <ul class="bullet-list">
-                <li>Clarified confusing terms and grouped related options logically.</li>
-                <li>Added inline tooltips to explain complex fields.</li>
-                <li>Introduced a final "Summary" step before submission so users could double-check their setup and avoid mistakes.</li>
-            </ul>
-        </div>
+        <div class="content">Clarify terminology, add inline tooltips, and introduce a dedicated review step to reinforce confidence and prevent costly mistakes. Together, these changes replaced guesswork with clarity in a mission-critical workflow.</div>
     </li>
   </ul>
 </div>
 
+<!--Key Strategic Decisions & Tradeoffs -->
+<div class="text-content-block after-image">
+  <h3>Key Strategic Decisions and Tradeoffs</h3>
+  <ul>
+        <li>
+            <h4>Accordion vs. Wizard</h4>
+            <div class="content">Usability testing showed the accordion increased errors and reduced confidence. Choosing a wizard required more engineering effort, but it aligned with our strategy to reduce misconfigurations in a mission-critical workflow.</div>
+        </li>
+        <li>
+            <h4>Vertical vs. Horizontal Stepper</h4>
+            <div class="content">Early wireframes used a horizontal stepper, but dense field names forced too much scanning. A vertical stepper supported our strategic objective of clarity by reducing visual load.</div>
+        </li>
+        <li>
+            <h4>Bulk Edit & Cloning First</h4>
+            <div class="content">Power users said 60% of their time was spent on repetitive changes. Prioritizing bulk edit and cloning delivered immediate efficiency gains, consistent with our strategy to maximize impact quickly.</div>
+        </li>
+        <li>
+            <h4>Summary Step vs. Inline Review</h4>
+            <div class="content">Inline confirmations weren't enough to build trust. Adding a dedicated summary step tied directly to our strategy of boosting confidence and led to the 85% increase in user confidence post-launch.</div>
+        </li>
+  </ul>
+</div>
 
 <!-- Images / Carousel / Wireframes -->
 <div class="cs-carousel-container">

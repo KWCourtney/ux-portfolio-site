@@ -286,7 +286,7 @@ heroCardsHTML: |
             <h4>Automated Profile and Campaign Creation (RPA)</h4>
             <div class="content">
                 <p>Manual setup of profiles and campaigns was slow and error-prone. I recommended robotic process automation (RPA) to remove these manual steps.</p>
-                <p><strong class="impact-label">Projected Impact:</strong>Reduce profile creation time by 90-95% (under 1 minute per device) and cut troubleshooting time by 90%.</p>
+                <p><strong class="impact-label">Projected Impact:</strong> Reduce profile creation time by 90-95% (under 1 minute per device) and cut troubleshooting time by 90%.</p>
             </div>
         </li>
     </ul>
